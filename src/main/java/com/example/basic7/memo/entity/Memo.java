@@ -1,4 +1,4 @@
-package com.example.memo.entity;
+package com.example.basic7.memo.entity;
 
 import com.example.basic7.member.entity.Member;
 import jakarta.persistence.*;

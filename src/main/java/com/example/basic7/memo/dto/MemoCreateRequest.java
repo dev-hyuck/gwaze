@@ -1,4 +1,4 @@
-package com.example.memo.dto;
+package com.example.basic7.memo.dto;
 
 import lombok.Getter;
 

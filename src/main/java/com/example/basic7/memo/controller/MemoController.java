@@ -1,9 +1,9 @@
-package com.example.memo.controller;
+package com.example.basic7.memo.controller;
 
-import com.example.memo.dto.MemoCreateRequest;
-import com.example.memo.dto.MemoCreateResponse;
-import com.example.memo.dto.MemoGetResponse;
-import com.example.memo.service.MemoService;
+import com.example.basic7.memo.dto.MemoCreateRequest;
+import com.example.basic7.memo.dto.MemoCreateResponse;
+import com.example.basic7.memo.dto.MemoGetResponse;
+import com.example.basic7.memo.service.MemoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

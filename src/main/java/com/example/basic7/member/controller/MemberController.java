@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private MemberService memberService;
+    private final MemberService memberService;
 
     @PostMapping("/members")
     public ResponseEntity<MemberCreateResponse> create (

@@ -1,14 +1,13 @@
-package com.example.memo.service;
+package com.example.basic7.memo.service;
 
 import com.example.basic7.member.entity.Member;
 import com.example.basic7.member.repository.MemberRepository;
-import com.example.memo.dto.MemoCreateRequest;
-import com.example.memo.dto.MemoCreateResponse;
-import com.example.memo.dto.MemoGetResponse;
-import com.example.memo.entity.Memo;
-import com.example.memo.repository.MemoRepository;
+import com.example.basic7.memo.dto.MemoCreateRequest;
+import com.example.basic7.memo.dto.MemoCreateResponse;
+import com.example.basic7.memo.dto.MemoGetResponse;
+import com.example.basic7.memo.entity.Memo;
+import com.example.basic7.memo.repository.MemoRepository;
 import lombok.RequiredArgsConstructor;
-import org.jspecify.annotations.Nullable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 public class MemoService {
 
-    private final MemoRepository memoRepository;
     private final MemberRepository memberRepository;
+    private final MemoRepository memoRepository;
 
     @Transactional
     public MemoCreateResponse save(MemoCreateRequest request) {

@@ -1,6 +1,6 @@
 package com.example.basic7.memo.entity;
 
-import com.example.basic7.member.entity.Member;
+import com.example.basic7.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,11 +17,11 @@ public class Memo {
     private String text;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    public Memo(String text, Member member) {
+    public Memo(String text, User user) {
         this.text = text;
-        this.member = member;
+        this.user = user;
     }
 }

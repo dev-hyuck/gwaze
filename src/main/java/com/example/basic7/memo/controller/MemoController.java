@@ -1,9 +1,9 @@
 package com.example.basic7.memo.controller;
 
-import com.example.basic7.memo.dto.MemoCreateRequest;
-import com.example.basic7.memo.dto.MemoCreateResponse;
-import com.example.basic7.memo.dto.MemoGetResponse;
+import com.example.basic7.memo.dto.CreateMemoRequest;
+import com.example.basic7.memo.dto.CreateMemoResponse;
 import com.example.basic7.memo.service.MemoService;
+import com.example.basic7.user.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,15 +17,11 @@ public class MemoController {
     private final MemoService memoService;
 
     @PostMapping("/memos")
-    public ResponseEntity<MemoCreateResponse> create (
-            @RequestBody MemoCreateRequest request
+    public ResponseEntity<CreateMemoResponse> create(
+            @SessionAttribute(name = "loginUser", required = false) SessionUser sessionUser,
+            @RequestBody CreateMemoRequest request
     ) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(memoService.save(request));
+        return ResponseEntity.status(HttpStatus.CREATED).body(memoService.save(sessionUser, request));
     }
-
-    @GetMapping("/memos/{memoId}")
-    public ResponseEntity<MemoGetResponse> getOne (@PathVariable Long memoId) {
-        return ResponseEntity.status(HttpStatus.OK).body(memoService.findOne(memoId));
-    }
-
 }
+

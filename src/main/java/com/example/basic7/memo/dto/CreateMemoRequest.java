@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 
-public class MemoCreateRequest {
+public class CreateMemoRequest {
 
     private String text;
-    private Long memberId;
 }
+
